@@ -2,33 +2,39 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>My Borrowed Books</title>
+    <title>Search Books - Online Library</title>
 </head>
 <body>
     <header>
-        <h1>My Borrowing History</h1>
+        <h1>Online Library System</h1>
         <nav>
-            <a href="user-dashboard.html">Home</a> |
-            <a href="search.html">Search More</a>
+            <a href="index.html">Home</a> |
+            <a href="user-dashboard.html">My Dashboard</a> |
+            <a href="borrowed-books.html">My Borrowed Books</a> |
+            <a href="login.html">Logout</a>
         </nav>
     </header>
     <hr>
+    <main>
+        <h2>Search for a Book</h2>
+        <form action="user-dashboard.html">
+            <label for="searchQuery">Search by Title or Author:</label><br>
+            <input type="text" id="searchQuery" name="searchQuery" placeholder="Enter book name or author..." required>
+            <br><br>
 
-    <h2>Books You Have Borrowed</h2>
-    <table border="1" width="80%">
-        <tr>
-            <th>Book ID</th>
-            <th>Book Name</th>
-            <th>Borrow Date</th>
-            <th>Due Date</th>
-        </tr>
-        <tr>
-            <td>101</td>
-            <td>HTML Basics</td>
-            <td>2026-03-01</td>
-            <td>2026-03-15</td>
-        </tr>
-    </table>
+            <label for="category">Or Search by Category:</label><br>
+            <select id="category" name="category">
+                <option value="">-- Select Category --</option>
+                <option value="science">Science</option>
+                <option value="history">History</option>
+                <option value="literature">Literature</option>
+                <option value="technology">Technology</option>
+            </select>
+            <br><br>
+
+            <button type="submit">Search Now</button>
+            <button type="reset">Clear</button>
+        </form>
+    </main>
 </body>
 </html>
-
