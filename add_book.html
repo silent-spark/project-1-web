@@ -1,15 +1,16 @@
 <!DOCTYPE html>
-<header>
-      <h1>Online Library System</h1>
-      <nav>
-          <a href="index.html">Home</a> |
-          <a href="user-dashboard.html">My Dashboard</a> |
-          <a href="borrowed-books.html">My Borrowed Books</a> |
-          <a href="login.html">Logout</a>
-      </nav>
-  </header>
-<hr>
 <html>
+<header>
+        <h1>Online Library System (Admin Panel)</h1>
+        <nav>
+            <a href="index.html">Home</a> |
+            <a href="admin-dashboard.html">Admin Dashboard</a> |
+            <a href="view-books-admin.html">Manage Books</a> |
+            <a href="login.html">Logout</a>
+        </nav>
+    </header>
+<hr>
+      
 <head>
     <title>Add Book - Admin</title>
 </head>
@@ -35,13 +36,14 @@
         </select><br><br>
         
         <label>Description:</label><br>
-        <textarea name="description" rows="4" cols="50" required></textarea><br><br>
-        
+        <textarea name="description" rows="4" cols="50" placeholder="Enter book details here..." required></textarea><br><br>
+
         <button type="submit">Add Book</button>
-        <button type="reset">Reset</button>
+        <button type="reset">Clear Form</button>
     </form>
     
     <br>
     <a href="manage-books.html">Back to Manage Books</a>
 </body>
+
 </html>
