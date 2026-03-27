@@ -1,0 +1,160 @@
+/* 1. SETUP  */
+:root
+/* Define color palette used throughout the whole website */
+{
+    --bg: #050505;
+    --accent: #800000;
+    --accent-glow: #b30000;
+    --text: #e5e5e5;
+}
+body
+{
+  /* Sets the main font and the dark gradient background of the entire page */
+    font-family: 'Segoe UI', sans-serif;
+    margin: 0;
+    padding: 20px;
+    color: var(--text);
+    background: radial-gradient(circle at top right, #2a0000, #050505);
+    min-height: 100vh;
+}
+
+/* 2. HEADER & NAVIGATION (Left Aligned) */
+header, nav
+{
+  /* Styles the top bar and the navigation links area */
+  text-align: left;
+  padding: 10px 20px;
+  background: #121212;
+}
+header
+{
+  /* Styles the main title (e.g., Online Library System) */
+  color: var(--accent-glow);
+  border-bottom: 2px solid var(--accent);
+  font-size: 20px;
+}
+
+nav a
+{
+  /* Styles the clickable links in the navigation bar (Home, Search, Dashboard) */
+  color: var(--text);
+  text-decoration: none;
+  margin-right: 20px;
+  font-size: 14px;
+  transition: 0.3s;
+}
+nav a:hover
+{
+  /* Glow effect when the mouse hovers over a navigation link */
+  color: var(--accent-glow);
+  text-shadow: 0 0 5px var(--accent-glow);
+}
+
+/* 3. MINIMALIST FORM (Compact & Left Aligned) */
+form
+{
+  /* Controls the width and position of search or login forms */
+    max-width: 500px;
+    margin: 30px 0 30px 20px;
+    padding: 0;
+    background: transparent;
+}
+
+label
+{
+  /* Styles the text above each input field (e.g., "Enter Book Name") */
+    display: block;
+    margin-bottom: 8px;
+    color: var(--accent-glow);
+    font-size: 14px;
+    font-weight: bold;
+}
+
+input, select, textarea
+{
+  /* Styles the boxes where users type or select options */
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 4px;
+    background: #1a1a1a;
+    border: 1px solid #333;
+    color: white;
+    font-size: 14px;
+    outline: none;
+}
+input:focus
+{
+  /* Changes the border color when the user clicks inside a text box to type */
+  border-color: var(--accent-glow);
+}
+
+/* 4. BUTTONS & TABLES */
+button, input[type="submit"]
+{
+  /* Styles all buttons like "Search Now", "Return Book", or "Login" */
+  background: var(--accent);
+  color: white;
+  font-weight: bold;
+  padding: 10px 25px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+button:hover
+{
+  /* Hover effect: makes the button brighter and slightly "lifts" it up */
+  background: var(--accent-glow);
+  transform: translateY(-1px);
+}
+
+table
+{
+  /* Styles the data table (e.g., the list of borrowed books) */
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  background: #121212;
+  font-size: 14px;
+}
+th, td
+{
+  /* Styles table headers and individual data cells */
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #262626;
+}
+tr:hover
+{
+  /* Highlights a specific row in the table when the mouse moves over it */
+  background: #1a0000;
+}
+
+/* 5. STATUS INDICATORS */
+b[style*="green"]
+{
+  /* Styles text showing available status in a clean green color */
+  color: #4ecca3 !important;
+}
+b[style*="red"]
+{
+  /* Styles text showing borrowed/not available status in a bright red */
+  color: #ff4d4d !important;
+}
+
+/* 6. HOME PAGE LIST LINKS (Fix for Purple Color) */
+ul a, ol a
+{
+  /* Styles links found inside bullet points (Fixes the default purple link color) */
+    color: var(--text);
+    text-decoration: none;
+    transition: 0.3s ease-in-out;
+}
+
+ul a:hover, ol a:hover
+{
+  /* Glow effect for list links on hover */
+    color: var(--accent-glow);
+    text-shadow: 0 0 5px var(--accent-glow);
+}
