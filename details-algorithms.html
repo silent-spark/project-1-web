@@ -2,6 +2,7 @@
 <html>
 <head>
     <title>Book Details - Algorithms</title>
+    <link rel="stylesheet" href="css/dark black.css">
 </head>
 <body>
     <h1>Online Library System </h1>
@@ -14,8 +15,13 @@
     <p><strong>Author:</strong> CLRS (Cormen, Leiserson, Rivest, Stein)</p>
     <p><strong>Category:</strong> Computer Science</p>
     <p><strong>Description:</strong> Widely used as a textbook in universities, this book covers a broad range of algorithms in depth, from sorting to graph theory.</p>
-    <p><strong>Status:</strong> <b style="color: red;">Not Available</b></p>
     
-    <p><i>Note: This book is currently borrowed and cannot be selected.</i></p>
+    <p><strong>Status:</strong> <b id="status-text" style="color: green;">Available</b></p>
+    
+    <form id="borrow-form" action="borrowed-books.html">
+        <button type="submit">Borrow This Book</button>
+    </form>
+
+    <script src="java script/details-algorithms.js"></script>
 </body>
 </html>
