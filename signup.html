@@ -1,53 +1,50 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Sign Up</title>
-<link rel="stylesheet" href="css/dark black.css">
-</head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
 
+    <link rel="stylesheet" href="css/dark black.css">
+</head>
 <body>
 
 <header>
     <h1>Online Library System</h1>
-    <nav>
-        <a href="index.html">Home</a> | 
-        <a href="login.html">Login</a> | 
-        <a href="signup.html">Sign Up</a>|
-        <a href="search.html">Search</a>
-    </nav>
+    <nav id="navbar"></nav>
 </header>
 
 <hr>
 
-<p>Welcome, create a new account</p>
+<main>
+    <h2>Create Account</h2>
 
-<h2>Create Account</h2>
+    <form id="signupForm">
+        <label>Full Name:</label>
+        <input type="text" id="fullName">
 
-<form>
+        <label>Email:</label>
+        <input type="email" id="email">
 
-<label>Full Name:</label><br>
-<input type="text" required><br><br>
+        <label>Password:</label>
+        <input type="password" id="password">
 
-<label>Email:</label><br>
-<input type="email" required><br><br>
+        <label>Confirm Password:</label>
+        <input type="password" id="confirmPassword">
 
-<label>Password:</label><br>
-<input type="password" required><br><br>
+        <label>Account Type:</label>
+        <select id="accountType">
+            <option value="">Select</option>
+            <option value="user">User</option>
+            <option value="admin">Admin</option>
+        </select>
 
-<label>Confirm Password:</label><br>
-<input type="password" required><br><br>
+        <input type="submit" value="Sign Up">
+        <p id="signupMessage"></p>
+    </form>
+</main>
 
-<label>Account Type:</label><br>
-<select required>
-<option>User</option>
-<option>Admin</option>
-</select>
-
-<br><br>
-
-<input type="submit" value="Sign Up">
-
-</form>
-
+<script src="js/signup.js"></script>
+<script src="js/navbar.js"></script>
 </body>
 </html>
