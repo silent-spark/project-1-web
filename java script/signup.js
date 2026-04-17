@@ -1,49 +1,74 @@
-function renderNavbar() {
-    const navbar = document.getElementById("navbar");
-    if (!navbar) return;
 
-    const currentUser = JSON.parse(localStorage.getItem("currentUser"));
-
-    let links = `<a href="index.html">Home</a>`;
-
-  
-    if (!currentUser) {
-        links += `
-            | <a href="login.html">Login</a>
-            | <a href="signup.html">Sign Up</a>
-        `;
-    }
-
-    else if (currentUser.role === "admin") {
-        links += `
-            | <a href="admin-dashboard.html">Dashboard</a>
-            | <a href="view-books-admin.html">View Books</a>
-            | <a href="add-book.html">Add Book</a>
-            | <a href="#" id="logoutBtn">Logout</a>
-        `;
-    }
-
-  
-    else {
-        links += `
-            | <a href="view-books-user.html">View Books</a>
-            | <a href="search.html">Search</a>
-            | <a href="borrowed-books.html">Borrowed Books</a>
-            | <a href="#" id="logoutBtn">Logout</a>
-        `;
-    }
-
-    navbar.innerHTML = links;
-
-    const logoutBtn = document.getElementById("logoutBtn");
-
-    if (logoutBtn) {
-        logoutBtn.addEventListener("click", function (e) {
-            e.preventDefault();
-            localStorage.removeItem("currentUser");
-            window.location.href = "index.html";
-        });
-    }
+if (!localStorage.getItem("users")) {
+    localStorage.setItem("users", JSON.stringify([]));
 }
 
-renderNavbar();
+const signupForm = document.getElementById("signupForm");
+const signupMessage = document.getElementById("signupMessage");
+
+signupForm.addEventListener("submit", function (event) {
+    event.preventDefault();
+
+    const fullName = document.getElementById("fullName").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const password = document.getElementById("password").value.trim();
+    const confirmPassword = document.getElementById("confirmPassword").value.trim();
+    const accountType = document.getElementById("accountType").value;
+
+    signupMessage.textContent = "";
+    signupMessage.style.color = "red";
+
+    // Required fields
+    if (!fullName || !email || !password || !confirmPassword || !accountType) {
+        signupMessage.textContent = "Please fill in all fields.";
+        return;
+    }
+
+    // Email validation
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailPattern.test(email)) {
+        signupMessage.textContent = "Please enter a valid email.";
+        return;
+    }
+
+    // Password length
+    if (password.length < 6) {
+        signupMessage.textContent = "Password must be at least 6 characters.";
+        return;
+    }
+
+    // Confirm password
+    if (password !== confirmPassword) {
+        signupMessage.textContent = "Passwords do not match.";
+        return;
+    }
+
+    let users = JSON.parse(localStorage.getItem("users"));
+
+    // Check duplicate email
+    const emailExists = users.some(user => user.email === email);
+    if (emailExists) {
+        signupMessage.textContent = "Email already exists.";
+        return;
+    }
+
+    // Create new user
+    const newUser = {
+        fullName: fullName,
+        email: email,
+        password: password,
+        role: accountType
+    };
+
+    users.push(newUser);
+    localStorage.setItem("users", JSON.stringify(users));
+
+    signupMessage.style.color = "green";
+    signupMessage.textContent = "Account created successfully! Redirecting...";
+
+    signupForm.reset();
+
+    setTimeout(() => {
+        window.location.href = "login.html";
+    }, 1500);
+});
