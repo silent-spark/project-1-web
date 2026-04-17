@@ -46,7 +46,7 @@ loginForm.addEventListener("submit", function (event) {
         if (foundUser.role === "admin") {
             window.location.href = "admin-dashboard.html";
         } else {
-            window.location.href = "view-books-user.html";
+            window.location.href = "user-dashboard.html";
         }
     }, 1200);
 });
