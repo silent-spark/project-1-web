@@ -1,0 +1,15 @@
+back_end/LibrarySystem/__pycache__/wsgi.cpython-314.pyc
+back_end/LibrarySystem/__pycache__/urls.cpython-314.pyc
+back_end/LibrarySystem/__pycache__/settings.cpython-314.pyc
+back_end/LibrarySystem/__pycache__/__init__.cpython-314.pyc
+back_end/library_app/migrations/__pycache__/0002_alter_book_id.cpython-314.pyc
+back_end/library_app/migrations/__pycache__/0001_initial.cpython-314.pyc
+back_end/library_app/migrations/__pycache__/__init__.cpython-314.pyc
+back_end/library_app/__pycache__/views.cpython-314.pyc
+back_end/library_app/__pycache__/apps.cpython-314.pyc
+back_end/library_app/__pycache__/forms.cpython-314.pyc
+back_end/library_app/__pycache__/models.cpython-314.pyc
+back_end/library_app/__pycache__/admin.cpython-314.pyc
+back_end/library_app/__pycache__/__init__.cpython-314.pyc
+back_end/db.sqlite3
+back_end/db.sqlite3
